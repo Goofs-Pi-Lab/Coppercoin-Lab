@@ -77,12 +77,10 @@ BitcoinGUI::BitcoinGUI(QWidget *parent):
     rpcConsole(0),
     nWeight(0)
 {
-    resize(850, 550);
+    resize(875, 550);
     setWindowTitle(tr("Coppercoin"));
 
     //qApp->setStyleSheet("QMainWindow { background-image:url(:/images/res/images/background.png);}");
-
-
     qApp->setStyleSheet("QMainWindow { background-color: #ffffff }");
 
 #ifndef Q_OS_MAC
@@ -343,6 +341,9 @@ void BitcoinGUI::createToolBars()
 {
     QToolBar *toolbar = addToolBar(tr("Tabs toolbar"));
     toolbar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+
+    toolbar->resize(QSize(100, 100));
+
     toolbar->addAction(overviewAction);
     toolbar->addAction(sendCoinsAction);
     toolbar->addAction(receiveCoinsAction);
